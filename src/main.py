@@ -1,10 +1,10 @@
 from time import sleep
+import src.motor.Motor as Motor
 import RPi.GPIO as GPIO
 
-PIN_NUM = 26
-
-GPIO.setmode(GPIO.BCM)
-GPIO.setup(PIN_NUM, GPIO.OUT)
-GPIO.output(PIN_NUM, GPIO.HIGH)
-sleep(5)
-GPIO.output(PIN_NUM, GPIO.LOW)
+FORWARD_PIN = 26
+BACKWARD_PIN = 19
+motionMotor = Motor(GPIO, lambda secs: sleep(secs), FORWARD_PIN, BACKWARD_PIN)
+motionMotor.forward(1)
+sleep(2)
+motionMotor.backward(1)
