@@ -1,5 +1,5 @@
 from time import sleep
-import src.motor.Motor as Motor
+from motor import Motor
 import RPi.GPIO as GPIO
 
 FORWARD_PIN = 26
