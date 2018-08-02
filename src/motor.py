@@ -7,13 +7,13 @@ class Motor:
         gpio.setup(forward_pin, gpio.OUT)
         gpio.setup(backward_pin, gpio.OUT)
 
-    def go(self, pin, delay):
+    def _go(self, pin, delay):
         self.gpio.output(pin, self.gpio.HIGH)
         self.sleepFunc(delay)
         self.gpio.output(pin, self.gpio.LOW)
 
     def forward(self, delay):
-        self.go(self.forwardPin, delay)
+        self._go(self.forwardPin, delay)
 
     def backward(self, delay):
-        self.go(self.backwardPin, delay)
+        self._go(self.backwardPin, delay)
