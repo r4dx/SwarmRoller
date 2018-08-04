@@ -17,7 +17,8 @@ def test_motor():
 def test_sonar():
     sonar = Sonar()
     while True:
-        print(sonar.get_distance())
+        distance = sonar.get_distance()
+        print(distance)
 
 
 GPIO.setmode(GPIO.BCM)
